@@ -1,10 +1,10 @@
-# Title
+# Todays Outfit!
 
 ## Repository
 https://github.com/denise-estip/final-project.git
 
 ## Description
-1-2 sentence description of what it will do and how it relevant to media and digital arts.
+What I plan to make is a simple dress up game where where there will be a base model and clothing sprites you can scroll through with arrow buttons. This is relevant to media and digtal arts because I will be combining my art (the sprite images) and coding. 
 
 ## Features
 - Feature 1
@@ -15,9 +15,9 @@ https://github.com/denise-estip/final-project.git
 	- Short explaination of how it will be executed.
 
 ## Challenges
-- Short sentence of any skill or topic that needs to be learnt or researched.
-- Short sentence of any skill or topic that needs to be learnt or researched.
-- Short sentence of any skill or topic that needs to be learnt or researched.
+- How I could implement a functional button that registers when it clicks.
+- The abilty to blit images in layers and not have them awkwardly overlap.
+- Using the button clicks to select different clothes. 
 
 ## Outcomes
 Ideal Outcome:
@@ -29,8 +29,9 @@ Minimal Viable Outcome:
 ## Milestones
 
 - Week 1
-  1. Goal 1
-  2. Goal 2
+  1. Get basic pygame code down, aka. while loop and initilize the game. 
+  2. implement functional button that registers when clicked
+  3. Draw out base character and clothing (png files)
 
 - Week 2
   1. Goal 1
