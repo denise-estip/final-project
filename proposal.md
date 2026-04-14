@@ -24,11 +24,15 @@ What I plan to make is a simple dress up game where there will be a base model a
 
 ## Outcomes
 Ideal Outcome:
-- The start screen is me, a plain base, and arrows, with animated text floating at the top with game title. 
+- The start screen is a character and arrows, with animated text floating at the top with game title. 
+- Each button works properly and blits a clothing item when clicked
+- audio plays when button is clicked
 
 Minimal Viable Outcome:
-- Briefly describe the bare essential for a good working outcome?
-
+- Everything is blit on screen properly
+- button audio is heard when clicked
+- button click shows another clothing item on screen
+ 
 ## Milestones
 
 - Week 1
@@ -39,9 +43,10 @@ Minimal Viable Outcome:
   5. add all images to a clothes folder and put into root folder
 
 - Week 2
-  1. use pygame 
-  2. Goal 2
+  1. use pygame to blit images on screen 
+  2. animated text at top of screen
+  3. audio when button is clicked 
 
 - Week N (Final)
-  1. Goal 1
-  2. Goal 2
+  1. clothes blit as you press button 
+  2. button image changes as you press it. 
