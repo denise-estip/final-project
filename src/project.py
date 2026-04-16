@@ -9,6 +9,7 @@ import pygame
 #button class
     # get mouse pos
     # when clicked change sprite
+    # button sprite gets smaller when clicked
 
 def main():
     pygame.init()
