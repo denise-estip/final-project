@@ -3,6 +3,10 @@ import pygame
 
 def main():
     pygame.init()
+    pygame.display.set_caption("Todays Outfit")
+    # mobile screen res
+    resolution = (1080,1920)
+    screen = pygame.display.set_mode(resolution)
 
 
     running = True
