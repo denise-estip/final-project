@@ -16,7 +16,7 @@ def main():
                 running = False
 
         #render display
-        white = pygame.color(255,255,255)
+        white = pygame.Color(255, 255, 255)
         screen.fill(white)
         pygame.display.flip()
     pygame.quit()
