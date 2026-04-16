@@ -1,6 +1,15 @@
 import pygame
 
 
+
+#sprite class
+    # loads each clothing img as sprite grp
+    # 
+
+#button class
+    # get mouse pos
+    # when clicked change sprite
+
 def main():
     pygame.init()
     pygame.display.set_caption("Todays Outfit")
