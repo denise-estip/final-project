@@ -16,7 +16,7 @@ def main():
     pygame.display.set_caption("Todays Outfit")
 
     # mobile screen res
-    resolution = (1080,1920)
+    resolution = ((1080/2),(1920/2))
     screen = pygame.display.set_mode(resolution)
 
     running = True
