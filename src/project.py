@@ -49,7 +49,7 @@ class Button():
 
 
 # create button instance
-button = Button(200,200, start_img, 0.5)
+button = Button(400,500, start_img, 0.5)
 
 def main():
     pygame.init()
