@@ -89,12 +89,18 @@ background = pygame.transform.scale_by(background, .5)
 #button class
 class Button():
     def __init__(self, x, y, image, scale):
+        self.original_image = image
+        self.scale = scale
         width = image.get_width()
         height = image.get_height()
         self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
         self.clicked = False
+        # Add button pressed state
+        self.normal_size = (int(width * scale), int(height * scale))
+        self.pressed_size = (int(width * scale * 0.9), int(height * scale * 0.9))  # 10% smaller
+        self.is_pressed = False
 
     def draw(self):
         action = False
@@ -140,6 +146,7 @@ def main():
             print('next outfit')
             player_character.next_outfit()
             click_sfx.play()
+    
 
         if l_button.draw():
             print('previous outfit')
