@@ -112,8 +112,19 @@ class Button():
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
                 self.clicked = True
                 action = True
+             # Shrink the button when clicked
+                self.image = pygame.transform.scale(self.original_image, self.pressed_size)
+                # Update rect to keep button centered
+                old_center = self.rect.center
+                self.rect = self.image.get_rect(center=old_center)
+                self.is_pressed = True
         
         if pygame.mouse.get_pressed()[0] == 0:
+            if self.is_pressed:
+                self.image = pygame.transform.scale(self.original_image, self.normal_size)
+                old_center = self.rect.center
+                self.rect = self.image.get_rect(center=old_center)
+                self.is_pressed = False
             self.clicked = False
 
         #draw button on screen
