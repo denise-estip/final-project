@@ -11,6 +11,9 @@ import pygame
     # when clicked change sprite
     # button sprite gets smaller when clicked
 
+#load in img
+start_img = pygame.image.load('game_assets/R_button.png').convert_alpha
+
 def main():
     pygame.init()
     pygame.display.set_caption("Todays Outfit")
