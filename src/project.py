@@ -4,9 +4,19 @@ import pygame
 
 #sprite class
 class Outfit(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, x, y,image, scale):
         super().__init__()
-    # loads each outfit img as sprite grp
+        # Load your initial outfit image
+        self.image = pygame.image.load('assets/outfits/base_character.png').convert_alpha()
+        self.rect = self.image.get_rect(center=(x, y))
+        
+    
+    def change_outfit(self, new_image_path):
+        # Method to swap the sprite's image
+        self.image = pygame.image.load(new_image_path).convert_alpha()
+        # Keep the sprite in the same position after changing size
+        old_center = self.rect.center
+        self.rect = self.image.get_rect(center=old_center)
     
 
 
@@ -16,6 +26,15 @@ resolution = ((540),(960))
 #game window
 screen = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Todays Outfit")
+
+# In your main game setup:
+# Create the character sprite
+player_character = Outfit(resolution[0] // 2, resolution[1] // 2)
+
+# Create a GroupSingle and add your character
+player_group = pygame.sprite.GroupSingle()
+player_group.add(player_character)
+
 
 #load in button img
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
@@ -53,6 +72,8 @@ class Button():
 
 # create button instance
 button = Button(400,500, start_img, 0.5)
+#outfit = pygame.sprite.Group()
+#outfit.add(Outfits)
 
 def main():
     pygame.init()
@@ -64,12 +85,16 @@ def main():
                 running = False 
         
         #render display
-        white = pygame.Color(255, 255, 255)
+        white = pygame.Color(255, 255, 255) 
         screen.fill(white)
+        
 
         if button.draw():
             print('Clicked')
-            
+            player_character.change_outfit('assets/outfits/outfit_1.png')
+
+        player_group.draw(screen) 
+        
         
         pygame.display.flip()
 
