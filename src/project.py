@@ -1,14 +1,20 @@
 import pygame
 
 
+pygame.init()
 
 #sprite class
 class Outfit(pygame.sprite.Sprite):
-    def __init__(self, x, y,image, scale):
+    def __init__(self, x, y):
         super().__init__()
         # Load your initial outfit image
-        self.image = pygame.image.load('assets/outfits/base_character.png').convert_alpha()
+        self.original_image = pygame.image.load('assets/outfits/base_character.png').convert_alpha()
+        self.image = pygame.transform.scale(self.original_image, 
+                    (int(self.original_image.get_width() * 0.5), 
+                     int(self.original_image.get_height() * 0.5)))
         self.rect = self.image.get_rect(center=(x, y))
+
+        
         
     
     def change_outfit(self, new_image_path):
@@ -22,14 +28,12 @@ class Outfit(pygame.sprite.Sprite):
 
 # mobile screen res
 resolution = ((540),(960))
-
 #game window
 screen = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Todays Outfit")
 
-# In your main game setup:
 # Create the character sprite
-player_character = Outfit(resolution[0] // 2, resolution[1] // 2)
+player_character = Outfit((resolution[0]) // 2, (resolution[1]) // 2)
 
 # Create a GroupSingle and add your character
 player_group = pygame.sprite.GroupSingle()
@@ -71,12 +75,11 @@ class Button():
 
 
 # create button instance
-button = Button(400,500, start_img, 0.5)
+button = Button(450,500, start_img, 0.5)
 #outfit = pygame.sprite.Group()
 #outfit.add(Outfits)
 
 def main():
-    pygame.init()
 
     running = True
     while running:
