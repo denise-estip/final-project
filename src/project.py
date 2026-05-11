@@ -10,6 +10,7 @@ import pygame
 # mobile screen res
 resolution = ((1080/2),(1920/2))
 screen = pygame.display.set_mode(resolution)
+pygame.display.set_caption("Todays Outfit")
 
 #load in img
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
@@ -30,7 +31,6 @@ button = Button(100,200, start_img)
 
 def main():
     pygame.init()
-    pygame.display.set_caption("Todays Outfit")
 
     running = True
     while running:
