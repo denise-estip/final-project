@@ -20,18 +20,20 @@ start_img = pygame.image.load('assets/R_button.png').convert_alpha()
 
 #button class
 class Button():
-    def __init__(self, x, y, image):
-        self.image = image
+    def __init__(self, x, y, image, scale):
+        width = image.get_width()
+        height = image.get_height()
+        self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
 
     def draw(self):
         #draw button on screen
-        screen.blit(self.image, (self.rect.x, self.rect.y))
+        screen.blit(self.image, ((self.rect.x), self.rect.y))
 
 
 # create button instance
-button = Button(100,200, start_img)
+button = Button(200,200, start_img, 0.5)
 
 def main():
     pygame.init()
@@ -45,10 +47,10 @@ def main():
         #render display
         white = pygame.Color(255, 255, 255)
         screen.fill(white)
-        pygame.display.flip()
 
         button.draw()
         
+        pygame.display.flip()
 
     pygame.quit()
 
