@@ -9,10 +9,12 @@ import pygame
 
 # mobile screen res
 resolution = ((1080/2),(1920/2))
+
+#game window
 screen = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Todays Outfit")
 
-#load in img
+#load in button img
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
 
 
@@ -27,6 +29,8 @@ class Button():
         #draw button on screen
         screen.blit(self.image, (self.rect.x, self.rect.y))
 
+
+# create button instance
 button = Button(100,200, start_img)
 
 def main():
@@ -37,11 +41,15 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
+        
         #render display
         white = pygame.Color(255, 255, 255)
         screen.fill(white)
         pygame.display.flip()
+
+        button.draw()
+        
+
     pygame.quit()
 
 
