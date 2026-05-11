@@ -48,7 +48,8 @@ player_group = pygame.sprite.GroupSingle()
 player_group.add(player_character)
 
 #load in button img
-start_img = pygame.image.load('assets/R_button.png').convert_alpha()
+r_button = pygame.image.load('assets/R_button.png').convert_alpha()
+l_button = pygame.image.load('assets/L_button.png').convert_alpha()
 #load title img
 title = pygame.image.load('assets/title.png').convert_alpha()
 title = pygame.transform.scale_by(title, .5)
@@ -88,7 +89,8 @@ class Button():
 
 
 # create button instance
-button = Button(450,600, start_img, 0.5)
+r_button = Button(450,600, r_button, 0.5)
+l_button = Button(30, 600, l_button, 0.5)
 click_sfx = pygame.mixer.Sound('assets/audio/click_sfx.mp3')
 
 
@@ -106,10 +108,16 @@ def main():
         screen.blit(background, (0,0))
         screen.blit(title,(100,30))
 
-        if button.draw():
+        if r_button.draw():
             print('Clicked')
             player_character.change_outfit('assets/outfits/outfit_1.png')
             click_sfx.play()
+
+        if l_button.draw():
+            print('Clicked')
+            player_character.change_outfit('assets/outfits/base_character.png')
+            click_sfx.play()
+
 
         player_group.draw(screen) 
         
