@@ -7,7 +7,6 @@ pygame.init()
 class Outfit(pygame.sprite.Sprite):
     def __init__(self, x, y, scale=0.5):
         super().__init__()
-        # Load your initial outfit image
         self.scale = scale
 
         self.outfit_paths = [
@@ -20,7 +19,20 @@ class Outfit(pygame.sprite.Sprite):
             'assets/outfits/outfit_6.png'
         ]
         
-    
+        #start with first img in index
+        self.current_outfit_index = 0
+
+        # Load and scale the first outfit
+        self.image = self.load_and_scale_image(self.outfit_paths[self.current_outfit_index])
+        self.rect = self.image.get_rect(center=(x, y))
+
+    def load_and_scale_image(self, image_path):
+        """Load and scale an image"""
+        image = pygame.image.load(image_path).convert_alpha()
+        new_width = int(image.get_width() * self.scale)
+        new_height = int(image.get_height() * self.scale)
+        return pygame.transform.scale(image, (new_width, new_height))
+
     def change_outfit(self, new_image_path):
         # Method to swap the sprite's image
         self.image = pygame.image.load(new_image_path).convert_alpha()
