@@ -9,7 +9,8 @@ class Outfit(pygame.sprite.Sprite):
         super().__init__()
         self.scale = scale
 
-        self.outfit_paths = [
+        #outfit paths
+        self.outfits = [
             'assets/outfits/base_character.png',
             'assets/outfits/outfit_1.png',
             'assets/outfits/outfit_2.png',
@@ -20,11 +21,11 @@ class Outfit(pygame.sprite.Sprite):
         ]
         
         #start with first img in index
-        self.current_outfit_index = 0
-
+        self.current_index = 0
         # Load and scale the first outfit
-        self.image = self.load_and_scale_image(self.outfit_paths[self.current_outfit_index])
+        self.image = self.load_and_scale_image(self.outfits[self.current_index])
         self.rect = self.image.get_rect(center=(x, y))
+
 
     def load_and_scale_image(self, image_path):
         """Load and scale an image"""
@@ -33,9 +34,27 @@ class Outfit(pygame.sprite.Sprite):
         new_height = int(image.get_height() * self.scale)
         return pygame.transform.scale(image, (new_width, new_height))
 
-    def change_outfit(self, new_image_path):
-        """updates sprite image"""
-        self.image = pygame.image.load(new_image_path).convert_alpha()
+    def next_outfit(self):
+            """Go to next outfit"""
+            if self.current_index < len(self.outfits) - 1:
+                self.current_index += 1
+            else:
+                self.current_index = 0  # Loop back to start
+            self.change_outfit()
+
+    
+    def previous_outfit(self):
+            """Go to previous outfit"""
+            if self.current_index > 0:
+                self.current_index -= 1
+            else:
+                self.current_index = len(self.outfits) - 1  # Loop to end
+            self.change_outfit()
+        
+    
+    def change_outfit(self):
+        """Update the sprite image"""
+        self.image = self.load_and_scale_image(self.outfits[self.current_index])
         # Keep the sprite in the same position after changing size
         old_center = self.rect.center
         self.rect = self.image.get_rect(center=old_center)
@@ -118,12 +137,12 @@ def main():
 
         if r_button.draw():
             print('next outfit')
-            player_character.change_outfit('assets/outfits/outfit_1.png')
+            player_character.next_outfit()
             click_sfx.play()
 
         if l_button.draw():
             print('previous outfit')
-            player_character.change_outfit('assets/outfits/base_character.png')
+            player_character.previous_outfit()
             click_sfx.play()
 
 
