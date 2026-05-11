@@ -17,7 +17,8 @@ class Outfit(pygame.sprite.Sprite):
             'assets/outfits/outfit_3.png',
             'assets/outfits/outfit_4.png',
             'assets/outfits/outfit_5.png',
-            'assets/outfits/outfit_6.png'
+            'assets/outfits/outfit_6.png',
+            'assets/outfits/outfit_7.png'
         ]
         
         #start with first img in index
