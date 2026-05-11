@@ -5,14 +5,10 @@ pygame.init()
 
 #sprite class
 class Outfit(pygame.sprite.Sprite):
-    def __init__(self, x, y):
+    def __init__(self, x, y, scale=0.5):
         super().__init__()
         # Load your initial outfit image
-        self.original_image = pygame.image.load('assets/outfits/base_character.png').convert_alpha()
-        self.image = pygame.transform.scale(self.original_image, 
-                    (int(self.original_image.get_width() * 0.5), 
-                     int(self.original_image.get_height() * 0.5)))
-        self.rect = self.image.get_rect(center=(x, y))
+        self.scale = scale
 
         self.outfit_paths = [
             'assets/outfits/base_character.png',
@@ -46,7 +42,7 @@ player_character = Outfit((resolution[0]) // 2, 570)
 # Create a GroupSingle and add your character
 player_group = pygame.sprite.GroupSingle()
 player_group.add(player_character)
-
+omg 
 #load in button img
 r_button = pygame.image.load('assets/R_button.png').convert_alpha()
 l_button = pygame.image.load('assets/L_button.png').convert_alpha()
