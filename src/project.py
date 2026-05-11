@@ -8,7 +8,7 @@ import pygame
 
 
 # mobile screen res
-resolution = ((1080/2),(1920/2))
+resolution = ((540),(960))
 
 #game window
 screen = pygame.display.set_mode(resolution)
@@ -58,7 +58,7 @@ def main():
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
+                running = False 
         
         #render display
         white = pygame.Color(255, 255, 255)
