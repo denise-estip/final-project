@@ -42,6 +42,8 @@ player_group.add(player_character)
 
 #load in button img
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
+#load title img
+title = pygame.image.load('assets/title.png').convert_alpha()
 
 
 #button class
@@ -76,8 +78,7 @@ class Button():
 
 # create button instance
 button = Button(450,500, start_img, 0.5)
-#outfit = pygame.sprite.Group()
-#outfit.add(Outfits)
+
 
 def main():
 
@@ -88,9 +89,10 @@ def main():
                 running = False 
         
         #render display
+        background = pygame.image.load('assets/bg.png')
         white = pygame.Color(255, 255, 255) 
         screen.fill(white)
-        
+
 
         if button.draw():
             print('Clicked')
