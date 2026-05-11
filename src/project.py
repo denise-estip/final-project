@@ -39,7 +39,6 @@ player_character = Outfit((resolution[0]) // 2, 570)
 player_group = pygame.sprite.GroupSingle()
 player_group.add(player_character)
 
-
 #load in button img
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
 #load title img
@@ -82,6 +81,7 @@ class Button():
 
 # create button instance
 button = Button(450,600, start_img, 0.5)
+click_sfx = pygame.mixer.Sound('assets/audio/')
 
 
 def main():
