@@ -6,12 +6,16 @@ import pygame
     # loads each clothing img as sprite grp
     # 
 
+
+# mobile screen res
+resolution = ((1080/2),(1920/2))
+screen = pygame.display.set_mode(resolution)
+
 #load in img
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
 
 
 #button class
-
 class Button():
     def __init__(self, x, y, image):
         self.image = image
@@ -22,14 +26,11 @@ class Button():
         #draw button on screen
         screen.blit(self.image, (self.rect.x, self.rect.y))
 
+button = Button(100,200, start_img)
 
 def main():
     pygame.init()
     pygame.display.set_caption("Todays Outfit")
-
-    # mobile screen res
-    resolution = ((1080/2),(1920/2))
-    screen = pygame.display.set_mode(resolution)
 
     running = True
     while running:
