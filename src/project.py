@@ -34,7 +34,7 @@ class Outfit(pygame.sprite.Sprite):
         return pygame.transform.scale(image, (new_width, new_height))
 
     def change_outfit(self, new_image_path):
-        # Method to swap the sprite's image
+        """updates sprite image"""
         self.image = pygame.image.load(new_image_path).convert_alpha()
         # Keep the sprite in the same position after changing size
         old_center = self.rect.center
@@ -54,7 +54,7 @@ player_character = Outfit((resolution[0]) // 2, 570)
 # Create a GroupSingle and add your character
 player_group = pygame.sprite.GroupSingle()
 player_group.add(player_character)
-omg 
+
 #load in button img
 r_button = pygame.image.load('assets/R_button.png').convert_alpha()
 l_button = pygame.image.load('assets/L_button.png').convert_alpha()
@@ -117,12 +117,12 @@ def main():
         screen.blit(title,(100,30))
 
         if r_button.draw():
-            print('Clicked')
+            print('next outfit')
             player_character.change_outfit('assets/outfits/outfit_1.png')
             click_sfx.play()
 
         if l_button.draw():
-            print('Clicked')
+            print('previous outfit')
             player_character.change_outfit('assets/outfits/base_character.png')
             click_sfx.play()
 
