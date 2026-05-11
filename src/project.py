@@ -3,8 +3,11 @@ import pygame
 
 
 #sprite class
-    # loads each clothing img as sprite grp
-    # 
+class Outfit(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+    # loads each outfit img as sprite grp
+    
 
 
 # mobile screen res
