@@ -33,7 +33,7 @@ screen = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Todays Outfit")
 
 # Create the character sprite
-player_character = Outfit((resolution[0]) // 2, (resolution[1]) // 2)
+player_character = Outfit((resolution[0]) // 2, 570)
 
 # Create a GroupSingle and add your character
 player_group = pygame.sprite.GroupSingle()
@@ -44,6 +44,10 @@ player_group.add(player_character)
 start_img = pygame.image.load('assets/R_button.png').convert_alpha()
 #load title img
 title = pygame.image.load('assets/title.png').convert_alpha()
+title = pygame.transform.scale_by(title, .5)
+#load bg img
+background = pygame.image.load('assets/bg.png').convert_alpha()
+background = pygame.transform.scale_by(background, .5)
 
 
 #button class
@@ -77,7 +81,7 @@ class Button():
 
 
 # create button instance
-button = Button(450,500, start_img, 0.5)
+button = Button(450,600, start_img, 0.5)
 
 
 def main():
@@ -89,10 +93,10 @@ def main():
                 running = False 
         
         #render display
-        background = pygame.image.load('assets/bg.png')
         white = pygame.Color(255, 255, 255) 
         screen.fill(white)
-
+        screen.blit(background, (0,0))
+        screen.blit(title,(100,30))
 
         if button.draw():
             print('Clicked')
