@@ -14,7 +14,15 @@ class Outfit(pygame.sprite.Sprite):
                      int(self.original_image.get_height() * 0.5)))
         self.rect = self.image.get_rect(center=(x, y))
 
-        
+        self.outfit_paths = [
+            'assets/outfits/base_character.png',
+            'assets/outfits/outfit_1.png',
+            'assets/outfits/outfit_2.png',
+            'assets/outfits/outfit_3.png',
+            'assets/outfits/outfit_4.png',
+            'assets/outfits/outfit_5.png',
+            'assets/outfits/outfit_6.png'
+        ]
         
     
     def change_outfit(self, new_image_path):
@@ -81,7 +89,7 @@ class Button():
 
 # create button instance
 button = Button(450,600, start_img, 0.5)
-click_sfx = pygame.mixer.Sound('assets/audio/')
+click_sfx = pygame.mixer.Sound('assets/audio/click_sfx.mp3')
 
 
 def main():
@@ -101,6 +109,7 @@ def main():
         if button.draw():
             print('Clicked')
             player_character.change_outfit('assets/outfits/outfit_1.png')
+            click_sfx.play()
 
         player_group.draw(screen) 
         
