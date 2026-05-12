@@ -10,7 +10,7 @@ https://github.com/denise-estip/final-project.git
 ## About This Project
 Today's Outfit is a simple dress-up game made using PyGame and assets drawn by me. In this game, you get to cycle through my wardrobe using simple buttons that display each outfit. 
 
-I chose to present the game in a portrait mobile format to simulate existing mobile dress-up games that I am inspired by, such as Love Nikki. This project aims to allow viewers to learn more about me through my clothing choices. 
+I chose to present the game in a portrait mobile format to simulate existing mobile dress-up games that I am inspired by, such as Love Nikki. This project aims to allow viewers to learn more about me through my clothing choices and my art. 
 
 In my repository, I have many game files that are used in my game. There is the assets folder, which holds the background, buttons, and the title art for my game, all in PNG format to allow for high-quality graphics. In that folder lies a subfolder called 'outfits' that has a base model and the outfit variants my character switches to. In my audio folder lies a single audio file of the click SFX used for the in-game buttons. Last is the clothing folder that holds the separate image files of the clothing item my avatar wears. 
 
