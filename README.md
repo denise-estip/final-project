@@ -5,7 +5,7 @@ ANGM 2305.0W1 - Programming for Digital Arts - S26 FINAL PROJECT
 https://github.com/denise-estip/final-project.git
 
 ## Demo 
-
+https://youtu.be/o87dZODOL8I
 
 ## About This Project
 Today's Outfit is a simple dress-up game made using PyGame and assets drawn by me. In this game, you get to cycle through my wardrobe using simple buttons that display each outfit. 
